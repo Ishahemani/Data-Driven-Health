@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Medicine</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello, {{ name }}</h2>
+    <h3>Here are the relevant medicines for your condition:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Medicine_Name</th>
+                <th>Description</th>
+                <th>Cancer_Type</th>
+                <th>dosage</th>
+                <th>path</th>
+                <th>adverse_effect</th>
+                <th>age_group</th>
+                <th>period_between_dosage</th>
+                <th>disease_interaction</th>
+                <th>Diabetes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in medicine.iterrows() %}
+            <tr>
+                <td>{{ row['Medicine_Name'] }}</td>
+                <td>{{ row['Description'] }}</td>
+                <td>{{ row['Cancer_Type'] }}</td>
+                <td>{{ row['dosage'] }}</td>
+                <td>{{ row['path'] }}</td>
+                <td>{{ row['adverse_effect'] }}</td>
+                <td>{{ row['age_group'] }}</td>
+                <td>{{ row['period_between_dosage'] }}</td>
+                <td>{{ row['disease_interaction'] }}</td>
+                <td>{{ row['Diabetes'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Result.css')}}">
+</head>
+<body>
+    <div class="prediction-container">
+        <div class="prediction">
+            <h1>Prediction Result</h1>
+            <h2>Your chances of having cancer is: <span id="prediction">{{prediction}}</span></h2>
+            <h4>FOR FURTHER CONFIRMATION PLEASE CONSULT A DOCTOR</h4><br>
+            <h3>{{motivate}}</h3>
+            <h3>{{motivate2}}</h3>
+            <h3>{{motivate3}}</h3>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assessment Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Health Assessment Form</h1>
+        <form id="healthForm" action="/predict" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label>Gender</label><br>
+            <input type="radio" id="male" name="gender" value="1">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="2">
+            <label for="female">Female</label><br><br>
+
+            <label>Choose one of the following:</label><br>
+            <input type="radio" id="cancer" name="healthIssue" value="cancer">
+            <label for="cancer">I have cancer</label><br>
+            <input type="radio" id="check" name="healthIssue" value="check">
+            <label for="check">I want to check for it</label><br><br>
+
+            <div id="cancerQuestions" style="display: none;">
+                <label for="cancerType">Which type of cancer do you have?</label><br><br>
+                <input type="radio" id="nonsmallcell" name="cancerType" value="nonsmallcell">
+                <label for="nonsmallcell">Non-Small Cell Lung Cancer</label><br>
+                <input type="radio" id="smallcell" name="cancerType" value="smallcell">
+                <label for="smallcell">Small Cell Lung Cancer</label><br>
+                <input type="radio" id="mesothelioma" name="cancerType" value="mesothelioma">
+                <label for="mesothelioma">Mesothelioma</label><br><br>
+
+                <label for="diabetes">Do you have diabetes?</label><br><br>
+                <input type="radio" id="diabetesYes" name="diabetes" value="Yes">
+                <label for="diabetesYes">Yes</label><br>
+                <input type="radio" id="diabetesNo" name="diabetes" value="No">
+                <label for="diabetesNo">No</label><br><br>
+            </div>
+
+
+                <div id="checkQuestions" style="display: none;">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location">                        
+                        <option value="0">Select city</option>
+                        <option value="1">Agartala</option>
+                        <option value="1">Ahmedabad</option>
+                        <option value="1">Aizawl</option>
+                        <option value="2">Amarpur</option>
+                        <option value="2">Amritsar</option>
+                        <option value="2">Bengaluru</option>
+                        <option value="3">Bhismaknagar</option>
+                        <option value="3">Bhopal</option>
+                        <option value="3">Bhuneswar</option>
+                        <option value="1">Biharsharif</option>
+                        <option value="1">Bikaner</option>
+                        <option value="1">Bilaspur</option>
+                        <option value="2">Bishnupur</option>
+                        <option value="2">Bokaro Steel City</option>
+                        <option value="2">Chandigarh</option>
+                        <option value="3">Chennai</option>
+                        <option value="3">Cherrapunji</option>
+                        <option value="3">Cuttack</option>
+                        <option value="1">Darjeeling</option>
+                        <option value="1">Dawangere</option>
+                        <option value="1">Dehradun</option>
+                        <option value="2">Deoghar</option>
+                        <option value="2">Dharmshala</option>
+                        <option value="2">Dispur</option>
+                        <option value="3">Faridabad</option>
+                        <option value="3">Gandhinagar</option>
+                        <option value="3">Gangtok</option>
+                        <option value="1">Gaya</option>
+                        <option value="1">Gurgaon</option>
+                        <option value="1">Guwahati</option>
+                        <option value="2">Guwalior</option>
+                        <option value="2">Gyalshing</option>
+                        <option value="2">Haridwar</option>
+                        <option value="3">Hyderabad</option>
+                        <option value="3">Imphal</option>
+                        <option value="3">Indore</option>
+                        <option value="1">Itanagar</option>
+                        <option value="1">Jaipur</option>
+                        <option value="1">Jaisalmer</option>
+                        <option value="2">Jamshedpur</option>
+                        <option value="2">Jhalandar</option>
+                        <option value="2">Karimnagar</option>
+                        <option value="3">Kochi</option>
+                        <option value="3">Kohima</option>
+                        <option value="3">Kolkata</option>
+                        <option value="1">Korba</option>
+                        <option value="1">Kozhikode</option>
+                        <option value="1">Kumarghat</option>
+                        <option value="2">Lucknow</option>
+                        <option value="2">Ludhiana</option>
+                        <option value="2">Lunglei</option>
+                        <option value="3">Madurai</option>
+                        <option value="3">Mandi</option>
+                        <option value="3">Mumbai</option>
+                        <option value="1">Mysore</option>
+                        <option value="1">Nagpur</option>
+                        <option value="1">Namchi</option>
+                        <option value="2">Nizamabad</option>
+                        <option value="2">Noida</option>
+                        <option value="2">Panaji</option>
+                        <option value="3">Patna</option>
+                        <option value="3">Ponda</option>
+                        <option value="3">Pune</option>
+                        <option value="1">Raipur</option>
+                        <option value="1">Rajkot</option>
+                        <option value="1">Ranchi</option>
+                        <option value="2">Roorkee</option>
+                        <option value="2">Rourkela</option>
+                        <option value="2">Serchhit</option>
+                        <option value="3">Shillong</option>
+                        <option value="3">Shimla</option>
+                        <option value="3">Siliguri</option>
+                        <option value="1">Surat</option>
+                        <option value="1">Tawang</option>
+                        <option value="1">Tezpur</option>
+                        <option value="2">Thiruvananthapuram</option>
+                        <option value="2">Tirchirappalli</option>
+                        <option value="2">Tuensang</option>
+                        <option value="3">Tura</option>
+                        <option value="3">Ukhrul</option>
+                        <option value="3">Varanasi</option>
+                        <option value="1">Vasco-de-gama</option>
+                        <option value="1">Vijayawada</option>
+                        <option value="1">Visakhapatnam</option>
+                        <option value="2">Warangal</option>
+                        <option value="2">Zunheboto</option>
+                        </select><br><br>
+                
+                    <label for="pollution">Distance from pollution:</label><br>
+                    <input type="radio" id="pollutionLow" name="pollution" value="3">
+                    <label for="pollutionLow">'Very near (0-3km)'</label><br>
+                    <input type="radio" id="pollutionMedium" name="pollution" value="2">
+                    <label for="pollutionMedium">Near (4-7km)</label><br>
+                    <input type="radio" id="pollutionHigh" name="pollution" value="1">
+                    <label for="pollutionHigh">Far (8-10km)</label><br><br>
+                
+                    <label for="timeIndoors">Time spent indoors vs outdoors:</label><br>
+                    <input type="radio" id="timeIndoorsLow" name="timeIndoors" value="1">
+                    <label for="timeIndoorsLow">1-3 hours</label><br>
+                    <input type="radio" id="timeIndoorsMedium" name="timeIndoors" value="2">
+                    <label for="timeIndoorsMedium">4-8 hours</label><br>
+                    <input type="radio" id="timeIndoorsHigh" name="timeIndoors" value="3">
+                    <label for="timeIndoorsHigh">9-12 hours</label><br>
+                    <input type="radio" id="timeIndoorsVeryHigh" name="timeIndoors" value="4">
+                    <label for="timeIndoorsHigh">More than 12 hours</label><br><br>
+                
+                    <label for="modeTransportation">Mode of transporation</label><br>
+                    <input type="radio" id="modeTransportation1" name="modeTransportation" value="1">
+                    <label for="modeTransportation1">Own Vehicle</label><br>
+                    <input type="radio" id="modeTransportation2" name="modeTransportation" value="2">
+                    <label for="modeTransportation2">Public Transport</label><br><br>
+                
+                    <label for="occupation">Occupation:</label><br>
+                    <input type="radio" id="occupationOffice" name="occupation" value="2">
+                    <label for="occupationOffice">Corporate Worker</label><br>
+                    <input type="radio" id="occupationOutdoor" name="occupation" value="3">
+                    <label for="occupationOutdoor">Labour</label><br>
+                    <input type="radio" id="occupationFactory" name="occupation" value="4">
+                    <label for="occupationFactory">Industry Worker</label><br>
+                    <input type="radio" id="occupationOther" name="occupation" value="1">
+                    <label for="occupationOther">Work from Home</label><br><br>
+                
+                    <label for="weather">Weather condition:</label><br>
+                    <input type="radio" id="weatherSunny" name="weather" value="4">
+                    <label for="weatherSunny">Sunny</label><br>
+                    <input type="radio" id="weatherCloudy" name="weather" value="3">
+                    <label for="weatherCloudy">Cloudy</label><br>
+                    <input type="radio" id="weatherRainy" name="weather" value="2">
+                    <label for="weatherRainy">Rainy</label><br>
+                    <input type="radio" id="weatherSnowy" name="weather" value="1">
+                    <label for="weatherSnowy">Snowy</label><br><br>
+                
+                    <label for="activities">Personal activities:</label><br>
+                    <input type="checkbox" id="activitiesDIY" name="activities" value="1">
+                    <label for="activitiesDIY">DIY Projects</label><br>
+                    <input type="checkbox" id="activitieBurningWoods" name="activities" value="4">
+                    <label for="activitieBurningWoods">Burning Woods</label><br>
+                    <input type="checkbox" id="activitiesPersonalCare" name="activities" value="2">
+                    <label for="activitiesPersonalCare">Personal Care Products</label><br>
+                    <input type="checkbox" id="activitiesCandles" name="activities" value="3">
+                    <label for="activitiesCandles">Daily usage of candles</label><br><br>
+                    <!-- Air pollution over-->
+                
+                    <label for="drinkFrequency">How often do you drink?</label><br>
+                    <input type="radio" id="drinkFrequencyNever" name="drinkFrequency" value="1">
+                    <label for="drinkFrequencyNever">Never</label><br>
+                    <input type="radio" id="drinkFrequencyRarely" name="drinkFrequency" value="2">
+                    <label for="drinkFrequencyRarely">Rarely</label><br>
+                    <input type="radio" id="drinkFrequencyOccasionally" name="drinkFrequency" value="3">
+                    <label for="drinkFrequencyOccasionally">Occasionally</label><br>
+                    <input type="radio" id="drinkFrequencyDaily" name="drinkFrequency" value="4">
+                    <label for="drinkFrequencyDaily">Daily</label><br><br>
+
+                    <div id="drinkquestions" style="display:none">
+                    <label for="howmuchdrink"> How much quantity of alcohol you consume</lable><br><br>
+                    <input type="radio" id="drinkquestionrarely" name="drinkquestions" value="1">
+                    <label for="drinkquestionrarely"> Once a week or less
+                    </label><br>
+                    <input type="radio" id="drinkquestionoccasional" name="drinkquestions" value="2">
+                    <label for="drinkquestionoccasional"> 2-3 times a week
+                    </label><br>
+                    <input type="radio" id="drinkquestionregular" name="drinkquestions" value="3">
+                    <label for="drinkquestionregular">  4-5 times a week
+                    </label><br>
+                    <input type="radio" id="drinkquestionfrequent" name="drinkquestions" value="4">
+                    <label for="drinkquestionfrequent">6 or more times a week</label><br><br>
+                    </div>
+                    <!-- Drink over-->
+                
+                    <label for="familyCancer">Does any of your family member have/had cancer?</label><br>
+                    <input type="radio" id="familyCancerYes" name="familyCancer" value="1">
+                    <label for="familyCancerYes">Yes</label><br>
+                    <input type="radio" id="familyCancerNo" name="familyCancer" value="1">
+                    <label for="familyCancerNo">No</label><br><br>
+                
+                    <div id="familyCancerQuestions" style="display: none;">
+                        <label for="ageonset">Age of Onset?</label><br>
+                        <input type="radio" id="ageonset1" name="ageonset" value="2">
+                        <label for="ageonset1">Less than 50 Years</label><br>
+                        <input type="radio" id="ageonset2" name="ageonset" value="1">
+                        <label for="ageonset1">More than 50 Years</label><br><br>                  
+
+                        <label for="multiplemember">How many members of family affected with cancer?</label><br>
+                        <input type="radio" id="member1" name="multiplemember" value="1">
+                        <label for="member1">1</label><br>
+                        <input type="radio" id="member2" name="multiplemember" value="2">
+                        <label for="member2">2</label><br>
+                        <input type="radio" id="member3" name="multiplemember" value="3">
+                        <label for="member3">3</label><br>
+                        <input type="radio" id="membermore" name="multiplemember" value="4">
+                        <label for="membermore">More than 3</label><br><br>
+                        
+                        <label for="familyCancerRelation">Relation with the family member</label><br>
+                        <input type="radio" id="family" name="familyCancerRelation" value="1">
+                        <label for="family">Family Member</label><br>
+                        <input type="radio" id="cousinfamily" name="familyCancerRelation" value="0">
+                        <label for="cousinfamily">Cousin Family Member</label><br><br>
+                        <!-- Add more questions for family cancer here -->
+                    </div>
+                
+                    <label for="otherMedicalCondition">Do you have any other medical condition like asthma?</label><br>
+                    <input type="radio" id="otherMedicalConditionYes" name="otherMedicalCondition" value="6">
+                    <label for="otherMedicalConditionYes">Yes</label><br>
+                    <input type="radio" id="otherMedicalConditionNo" name="otherMedicalCondition" value="2">
+                    <label for="otherMedicalConditionNo">No</label><br><br>
+                
+                    <label for="smoking">Do you smoke?</label><br>
+                    <input type="radio" id="smokingYes" name="smoking" value="2">
+                    <label for="smokingYes">Yes</label><br>
+                    <input type="radio" id="smokingNo" name="smoking" value="1">
+                    <label for="smokingNo">No</label><br><br>
+                
+                    <div id="smokingQuestions" style="display: none;">
+                        <label for="smokingDuration">Since how long are you smoking?</label><br><br>
+                        <input type="radio" id="smoking02" name="smokingDuration" value="1">
+                        <label for="smoking02">0-2 Years</label><br>
+                        <input type="radio" id="smoking34" name="smokingDuration" value="2">
+                        <label for="smoking34">3-4 Years</label><br>
+                        <input type="radio" id="smokingmore" name="smokingDuration" value="3">
+                        <label for="smokingmore">More than 4 Years</label><br><br>
+
+                        <label for="smokingpack">Since how long are you smoking?</label><br><br>
+                        <input type="radio" id="smokingless1" name="smokingpack" value="1">
+                        <label for="smokingless1">Less than a pack</label><br>
+                        <input type="radio" id="smoking1" name="smokingpack" value="2">
+                        <label for="smoking1">1 pack</label><br>
+                        <input type="radio" id="smokingmore1" name="smokingpack" value="3">
+                        <label for="smokingmore1">More than 1 pack</label><br><br>
+                    </div>
+
+                    <label for="passivsmoker">Are you a passive smoker?</label><br>
+                    <input type="radio" id="passivesmokerYes" name="passivsmoker" value="6">
+                    <label for="passivesmokerYes">Yes</label><br>
+                    <input type="radio" id="passivesmokerNo" name="passivsmoker" value="1">
+                    <label for="passivesmokerNo">No</label><br><br>
+                
+                    <label for="symptoms">Are you having any of the symptoms?</label><br>
+                    <input type="checkbox" id="symptomschestpain" name="symptomschestpain" value="1">
+                    <label for="symptomschestpain">Chestpain</label><br>
+                    <input type="checkbox" id="symptomscoughblood" name="symptomscoughblood" value="1">
+                    <label for="symptomscoughblood">Coughing of blood</label><br>
+                    <input type="checkbox" id="symptomsfatigue" name="symptomsfatigue" value="1">
+                    <label for="symptomsfatigue">Fatigue</label><br>
+                    <input type="checkbox" id="symptomsswallow" name="symptomsswallow" value="1">
+                    <label for="symptomsswallow">Difficulty in swallowing</label><br>
+                    <input type="checkbox" id="symptomsbreath" name="symptomsbreath" value="1">
+                    <label for="symptomsbreath">Shortness of breath</label><br>
+                    <input type="checkbox" id="symptomswheezing" name="symptomswheezing" value="1">
+                    <label for="symptomswheezing">Wheezing</label><br>
+                    <input type="checkbox" id="symptomscold" name="symptomscold" value="1">
+                    <label for="symptomscold">Frequent cold</label><br>
+                    <input type="checkbox" id="symptomscough" name="symptomscough" value="1">
+                    <label for="symptomscough">Dry cough</label><br>
+                    <input type="checkbox" id="symptomsnone" name="symptomsnone" value="2">
+                    <label for="symptomsnone">None</label><br><br>
+                    <!-- Add more symptoms as needed -->
+                
+                    <label for="weightLoss">Have you felt any weight loss or appetite changes?</label><br>
+                    <input type="radio" id="weightLossYes" name="weightLoss" value="6">
+                    <label for="weightLossYes">Yes</label><br>
+                    <input type="radio" id="weightLossNo" name="weightLoss" value="2">
+                    <label for="weightLossNo">No</label><br><br>
+                
+                    <label for="fruitVegetables">Do you include variety of fruits and vegetables in your daily meals?</label><br>
+                    <input type="radio" id="fruitVegetablesYes" name="fruitVegetables" value="0">
+                    <label for="fruitVegetablesYes">Yes</label><br>
+                    <input type="radio" id="fruitVegetablesNo" name="fruitVegetables" value="1">
+                    <label for="fruitVegetablesNo">No</label><br><br>
+                
+                    <label for="leanProtein">How often do you consume sources of lean protein?</label><br>
+                    <input type="radio" id="leanProteinRarely" name="leanProtein" value="4">
+                    <label for="leanProteinRarely">Rarely</label><br>
+                    <input type="radio" id="leanProteinOccasionally" name="leanProtein" value="3">
+                    <label for="leanProteinOccasionally">Occasionally</label><br>
+                    <input type="radio" id="leanProteinRegularly" name="leanProtein" value="2">
+                    <label for="leanProteinRegularly">Regularly</label><br>
+                    <input type="radio" id="leanProteinDaily" name="leanProtein" value="1">
+                    <label for="leanProteinDaily">Daily</label><br><br>
+                
+                    <label for="wholeGrains">Are whole grains a part of your diet?</label><br>
+                    <input type="radio" id="wholeGrainsYes" name="wholeGrains" value="0">
+                    <label for="wholeGrainsYes">Yes</label><br>
+                    <input type="radio" id="wholeGrainsNo" name="wholeGrains" value="1">
+                    <label for="wholeGrainsNo">No</label><br><br>
+                
+                    <label for="dairyConsumption">Do you consume dairy or dairy alternatives?</label><br>
+                    <input type="radio" id="dairyConsumptionYes" name="dairyConsumption" value="0">
+                    <label for="dairyConsumptionYes">Yes</label><br>
+                    <input type="radio" id="dairyConsumptionNo" name="dairyConsumption" value="1">
+                    <label for="dairyConsumptionNo">No</label><br><br>
+                
+                    <label for="sugarFats">How often do you consume foods high in added sugars and unhealthy fats?</label><br>
+                    <input type="radio" id="sugarFatsRarely" name="sugarFats" value="4">
+                    <label for="sugarFatsRarely">Rarely</label><br>
+                    <input type="radio" id="sugarFatsOccasionally" name="sugarFats" value="3">
+                    <label for="sugarFatsOccasionally">Occasionally</label><br>
+                    <input type="radio" id="sugarFatsRegularly" name="sugarFats" value="2">
+                    <label for="sugarFatsRegularly">Regularly</label><br>
+                    <input type="radio" id="sugarFatsDaily" name="sugarFats" value="1">
+                    <label for="sugarFatsDaily">Daily</label><br><br>
+                
+                    <label for="waterConsumption">Do you drink enough water throughout the day?</label><br>
+                    <input type="radio" id="waterConsumptionYes" name="waterConsumption" value="0">
+                    <label for="waterConsumptionYes">Yes</label><br>
+                    <input type="radio" id="waterConsumptionNo" name="waterConsumption" value="1">
+                    <label for="waterConsumptionNo">No</label><br><br>
+                
+                    <label for="nutritionalDeficiencies">Do you experience any symptoms of nutritional deficiencies?</label><br>
+                    <input type="radio" id="nutritionalDeficienciesYes" name="nutritionalDeficiencies" value="0">
+                    <label for="nutritionalDeficienciesYes">Yes</label><br>
+                    <input type="radio" id="nutritionalDeficienciesNo" name="nutritionalDeficiencies" value="1">
+                    <label for="nutritionalDeficienciesNo">No</label><br><br>
+                
+                    <label for="mealTime">Time of your meals:</label><br>
+                    <input type="radio" id="mealTimeRegular" name="mealTime" value="0">
+                    <label for="mealTimeRegular">Regular</label><br>
+                    <input type="radio" id="mealTimeIrregular" name="mealTime" value="1">
+                    <label for="mealTimeIrregular">Irregular</label><br><br>
+                
+                    <label for="obesityHistory">Do you have any medical conditions or family history of obesity-related diseases?</label><br>
+                    <input type="radio" id="obesityHistoryYes" name="obesityHistory" value="3">
+                    <label for="obesityHistoryYes">Yes</label><br>
+                    <input type="radio" id="obesityHistoryNo" name="obesityHistory" value="1">
+                    <label for="obesityHistoryNo">No</label><br><br>
+
+                    <div id="obesity" style="display:none">
+                        <label for="obesityquestions">What is you current ratio of height and weight?</label><br><br>
+                        <input type="radio" id="obesity11" name="obesityquestions" value="1">
+                        <label for="obesity11">1:1</label><br>
+                        <input type="radio" id="obesity12" name="obesityquestions" value="2">
+                        <label for="obesity12">1:2</label><br>
+                        <input type="radio" id="obesity13" name="obesityquestions" value="3">
+                        <label for="obesity13">1:3</label><br>
+                        <input type="radio" id="obesity14" name="obesityquestions" value="4">
+                        <label for="obesity14">1:4</label><br><br>
+                    </div>
+                </div>
+                
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

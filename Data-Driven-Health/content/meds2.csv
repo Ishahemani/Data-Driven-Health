@@ -1,0 +1,126 @@
+Medicine_Name,Description,Cancer_Type,dosage,path,adverse_effect,age_group,period_between_dosage,disease_interaction,Diabetes
+Pemetrexed (Alimta)," it is a folate analog used to treat 
+mesothelioma and non-small cell lung cancer",mesothelioma,25-100 mg," Intravenous,
+ Parenteral","1.Fever
+2.visual loss
+3.hearing loss",Adult,21 days,"Renal  dysfunction,
+liver dysfunction,
+pneumonitis",Yes
+Pemetrexed (Alimta)," it is a folate analog used to treat 
+mesothelioma and non-small cell lung cancer",nonsmallcell,25-100 mg," Intravenous,
+ Parenteral","1.Fever
+2.visual loss
+3.hearing loss",Adult,21 days,"Renal  dysfunction,
+liver dysfunction,
+pneumonitis",Yes
+paclitaxel,"is a taxoid chemotherapeutic agent used as
+ first-line and subsequent therapy for the treatment of ",nonsmallcell,150mg/25 ml," Intravenous,
+ Parenteral","1.Fever
+2.unusual bleeding or bruising
+3.weakness",Adult,3 weeks,"conduction disorders,
+liver dysfunction,
+anaphylaxis",Yes
+cisplatin,"Cisplatin is often used as part of combination chemotherapy regimens
+ for various types of lung cancer, including non-small cell lung cancer (NSCLC) 
+and small cell lung cancer (SCLC). 
+It may be used before surgery (neoadjuvant therapy), 
+after surgery (adjuvant therapy), or in advanced stages of the disease.",nonsmallcell,60 to 100 mg/m^2,Intravenous,"1.kidney damage
+2.hearing loss
+3.numbness",Adult,3 weeks,"Infections,
+Hearing loss,
+Myelosuppression,
+Peripheral neuropathy,
+Renal dysfunction,
+Hemolytic anemia,
+Ocular toxicity,",No
+cisplatin,"Cisplatin is often used as part of combination chemotherapy regimens
+ for various types of lung cancer, including non-small cell lung cancer (NSCLC) 
+and small cell lung cancer (SCLC). 
+It may be used before surgery (neoadjuvant therapy), 
+after surgery (adjuvant therapy), or in advanced stages of the disease.",smallcell,60 to 100 mg/m^2,Intravenous,"1.kidney damage
+2.hearing loss
+3.numbness",Adult,3 weeks,"Infections,
+Hearing loss,
+Myelosuppression,
+Peripheral neuropathy,
+Renal dysfunction,
+Hemolytic anemia,
+Ocular toxicity,",No
+cisplatin,"Cisplatin is often used as part of combination chemotherapy regimens
+ for various types of lung cancer, including non-small cell lung cancer (NSCLC) 
+and small cell lung cancer (SCLC). 
+It may be used before surgery (neoadjuvant therapy), 
+after surgery (adjuvant therapy), or in advanced stages of the disease.",mesothelioma,60 to 100 mg/m^2,Intravenous,"1.kidney damage
+2.hearing loss
+3.numbness",Adult,3 weeks,"Infections,
+Hearing loss,
+Myelosuppression,
+Peripheral neuropathy,
+Renal dysfunction,
+Hemolytic anemia,
+Ocular toxicity,",No
+Docetaxel,Docetaxel is a chemotherapy medication commonly used in the treatment of lung cancer. ,nonsmallcell,61 to 100 mg/m^2,Intravenous,"1.neutropenia (low white blood cell count)
+2.peripheral neuropathy.",Adult,3 weeks,"Infections
+Edema
+Eye disorder
+Hepatic dysfunction
+Myelosuppression
+Alcoholism
+Paresthesia",Yes
+Etopophos (Etoposide Phosphate),"Etopophos, also known as Etoposide Phosphate, is a chemotherapy medication 
+primarily used in the treatment of small cell lung cancer",smallcell,20 to 50 mg/ml,Intravenous,"1.lowered blood cell count
+2.increasing the risk of infections
+3.anemia, and bleeding.",Adult,28 days,"renal dysfunction
+myelosuppression
+infections",Yes
+Durvalumab(Imfinzi),"Durvalumab is a medication used in the treatment of lung cancer, specifically small cell lung cancer.",nonsmallcell,10 mg/kg,Intravenous,"1.lowered blood cell count
+2.increasing the risk of infections
+3.anemia, and bleeding.",Adult,2 weeks,"Adrenal insufficiency
+Colitis
+Diabetes
+Infections
+Liver dysfunction
+Renal dysfunction
+Thyroid disorders
+Durvalumab – pneumonitis
+HSCT
+Myasthenia gravis
+Organ transplant",No
+Durvalumab(Imfinzi),"Durvalumab is a medication used in the treatment of lung cancer, specifically small cell lung cancer.",smallcell,10 mg/kg,Intravenous,"1.lowered blood cell count
+2.increasing the risk of infections
+3.anemia, and bleeding.",Adult,2 weeks,"Adrenal insufficiency
+Colitis
+Diabetes
+Infections
+Liver dysfunction
+Renal dysfunction
+Thyroid disorders
+Durvalumab – pneumonitis
+HSCT
+Myasthenia gravis
+Organ transplant",No
+vinorelbine,"Vinorelbine is an anti-cancer medication primarily used 
+in the treatment of lung cancer, particularly non-small cell lung cancer (NSCLC) and mesothelioma",mesothelioma,10 to 50  mg/ml,Intravenous,"1.Bone marrow suppression
+2.Peripheral neuropathy
+3.Injection site reactions",Adult,week,"deep vein thrombosis and pulmonary , 
+Liver Disease,
+fever/infections",No
+vinorelbine,"Vinorelbine is an anti-cancer medication primarily used 
+in the treatment of lung cancer, particularly non-small cell lung cancer (NSCLC) and mesothelioma",nonsmallcell,10 to 50  mg/ml,Intravenous,"1.Bone marrow suppression
+2.Peripheral neuropathy
+3.Injection site reactions",Adult,week,"deep vein thrombosis and pulmonary , 
+Liver Disease,
+fever/infections",No
+"gemcitabine(
+Gemzar)",Gemcitabine is a chemotherapy medication commonly used in the treatment of mesothelioma lung cancer,mesothelioma,200 mg/5.26mL,Intravenous,"1.fever
+2.chills 
+3.muscle aches",Adult,week,"Infections
+Cardiovascular dysfunction
+Hemolytic uremic syndrome
+Myelosuppression
+Cerebrovascular disease
+Edema
+Hepatic dysfunction
+Paresthesia
+Pulmonary dysfunction
+Renal dysfunction",No
